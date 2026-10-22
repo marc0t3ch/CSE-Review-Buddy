@@ -31,7 +31,51 @@ class _LearningScreenState extends State<LearningScreen> {
       Expanded(child:tab==2?progressView():ListView(padding:const EdgeInsets.all(16),children:[
         Text(tab==0?'Study by subject':'Choose a practice subject',style:Theme.of(context).textTheme.titleLarge),
         const SizedBox(height:8),
-        for(final s in subjects) Card(child:ListTile(title:Text(s['title'] as String),subtitle:Text(s['description'] as String),trailing:const Icon(Icons.chevron_right),onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>tab==0?LessonList(subject:s,lessons:lessons.where((l)=>l['subjectId']==s['id']).toList()):QuizScreen(subject:s,questions:questions.where((q)=>q['subjectId']==s['id']).toList(),onFinish:(score,total) async {final prefs=await SharedPreferences.getInstance();final updated=Map<String,dynamic>.from(history);updated[s['id'] as String]={'score':score,'total':total,'date':DateTime.now().toIso8601String()};await prefs.setString('quiz_history',jsonEncode(updated));await AttemptStore.add(mode:'practice',level:widget.level,score:score,total:total,elapsedSeconds:0,subjectStats:{s['id'] as String:[score,total]});if(mounted)setState(()=>history=updated);})))),
+        for (final subject in subjects)
+          Card(
+            child: ListTile(
+              title: Text(subject['title'] as String),
+              subtitle: Text(subject['description'] as String),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () {
+                final subjectId = subject['id'] as String;
+                if (tab == 0) {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (_) => LessonList(
+                      subject: subject,
+                      lessons: lessons.where((l) => l['subjectId'] == subjectId).toList(),
+                    ),
+                  ));
+                } else {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (_) => QuizScreen(
+                      subject: subject,
+                      questions: questions.where((q) => q['subjectId'] == subjectId).toList(),
+                      onFinish: (score, total) async {
+                        final prefs = await SharedPreferences.getInstance();
+                        final updated = Map<String, dynamic>.from(history);
+                        updated[subjectId] = {
+                          'score': score,
+                          'total': total,
+                          'date': DateTime.now().toIso8601String(),
+                        };
+                        await prefs.setString('quiz_history', jsonEncode(updated));
+                        await AttemptStore.add(
+                          mode: 'practice',
+                          level: widget.level,
+                          score: score,
+                          total: total,
+                          elapsedSeconds: 0,
+                          subjectStats: {subjectId: [score, total]},
+                        );
+                        if (mounted) setState(() => history = updated);
+                      },
+                    ),
+                  ));
+                }
+              },
+            ),
+          ),
         const SizedBox(height:14),
         const Text('Sample original content only. This is not an official CSC question bank.',style:TextStyle(fontSize:12)),
       ])),
