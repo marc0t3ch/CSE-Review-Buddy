@@ -24,3 +24,20 @@ for path in [Path('android/app/build.gradle'),Path('android/app/build.gradle.kts
         b=b.replace('compileOptions {','compileOptions {\n        coreLibraryDesugaringEnabled true',1)
         b += "\ndependencies { coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4' }\n"
     path.write_text(b)
+
+# Align JVM bytecode targets across Android plugin subprojects, including
+# flutter_timezone, whose Kotlin 1.8 target conflicts with Java 11.
+root = Path('android/build.gradle.kts')
+if root.exists():
+    b = root.read_text()
+    b += '''
+
+subprojects {
+    afterEvaluate {
+        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+            compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+        }
+    }
+}
+'''
+    root.write_text(b)
