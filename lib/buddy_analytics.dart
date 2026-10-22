@@ -104,12 +104,32 @@ class _MockExamScreenState extends State<MockExamScreen> with WidgetsBindingObse
   Timer? timer;
   int secondsRemaining=0,index=0;
   bool submitted=false,loading=true;
+  static const weights = {'verbal':30,'analytical':35,'numerical':30,'general':5};
   @override void initState(){super.initState();WidgetsBinding.instance.addObserver(this);load();}
   @override void didChangeAppLifecycleState(AppLifecycleState state){if(state==AppLifecycleState.resumed)tick();}
   Future<void> load() async {
     final data=jsonDecode(await rootBundle.loadString('assets/review_content.json')) as Map<String,dynamic>;
-    final items=(data['questions'] as List).cast<Map<String,dynamic>>()
-        .where((q)=>(q['levels'] as List).contains(widget.level)).toList()..shuffle(Random());
+    final bank=(data['questions'] as List).cast<Map<String,dynamic>>()
+        .where((q)=>(q['levels'] as List).contains(widget.level)).toList();
+    final rng=Random();
+    // Professional blueprint: 20 questions = 6 verbal, 7 analytical,
+    // 6 numerical, 1 general. Require sufficient unique items per subject.
+    final items=<Map<String,dynamic>>[];
+    if(widget.level=='Professional') {
+      for(final entry in weights.entries){
+        final pool=bank.where((q)=>q['subjectId']==entry.key).toList()..shuffle(rng);
+        final count=entry.value~/5;
+        if(pool.length<count){
+          if(mounted)setState((){questions=[];loading=false;});
+          return;
+        }
+        items.addAll(pool.take(count));
+      }
+      items.shuffle(rng);
+    } else {
+      // Subprofessional uses its own subject coverage, not the Professional blueprint.
+      items.addAll(bank..shuffle(rng));
+    }
     final now=DateTime.now();
     if(!mounted)return;
     setState((){questions=items;started=now;secondsRemaining=items.length*75;
@@ -126,23 +146,23 @@ class _MockExamScreenState extends State<MockExamScreen> with WidgetsBindingObse
     for(final q in questions){final id=q['id'] as String,subject=q['subjectId'] as String;
       final v=stats.putIfAbsent(subject,()=>[0,0]);v[1]++;
       if(answers[id]==q['correctIndex']){score++;v[0]++;}}
-    await AttemptStore.add(mode:'sample_mock',level:widget.level,score:score,total:questions.length,
+    await AttemptStore.add(mode:'weighted_mock',level:widget.level,score:score,total:questions.length,
       elapsedSeconds:DateTime.now().difference(started!).inSeconds,subjectStats:stats);
     if(mounted)setState(()=>submitted=true);
   }
   @override void dispose(){timer?.cancel();WidgetsBinding.instance.removeObserver(this);super.dispose();}
   @override Widget build(BuildContext context){
     if(loading)return const Scaffold(body:Center(child:CircularProgressIndicator()));
-    if(questions.isEmpty)return Scaffold(appBar:AppBar(title:const Text('Sample mock exam')),body:const Center(child:Text('No questions available for this level.')));
+    if(questions.isEmpty)return Scaffold(appBar:AppBar(title:const Text('Sample mock exam')),body:const Center(child:Text('Not enough unique questions for this exam blueprint yet.')));
     if(submitted){final score=questions.where((q)=>answers[q['id']]==q['correctIndex']).length;
       return Scaffold(appBar:AppBar(title:const Text('Mock exam results')),body:ListView(padding:const EdgeInsets.all(20),children:[
         Text('$score / ${questions.length}',style:Theme.of(context).textTheme.displayMedium),
-        const Text('Sample timed quiz completed. Answers and explanations:'),const SizedBox(height:12),
+        const Text('Timed practice completed. Answers and explanations:'),const SizedBox(height:12),
         for(final q in questions)Card(child:ExpansionTile(title:Text(q['prompt'] as String),subtitle:Text(answers[q['id']]==q['correctIndex']?'Correct':'Incorrect or unanswered'),children:[Padding(padding:const EdgeInsets.all(14),child:Text('Correct answer: ${(q['options'] as List)[q['correctIndex']]}\n\n${q['explanation']}'))])),
         FilledButton(onPressed:()=>Navigator.pop(context),child:const Text('Back to Buddy')),
       ]));}
     final q=questions[index],opts=(q['options'] as List).cast<String>();
-    return Scaffold(appBar:AppBar(title:const Text('Timed sample mock'),actions:[TextButton(onPressed:submit,child:const Text('Submit'))]),
+    return Scaffold(appBar:AppBar(title:const Text('Timed mock exam'),actions:[TextButton(onPressed:submit,child:const Text('Submit'))]),
       body:ListView(padding:const EdgeInsets.all(18),children:[
         Text('Time remaining: ${secondsRemaining~/60}:${(secondsRemaining%60).toString().padLeft(2,'0')}',style:Theme.of(context).textTheme.titleLarge),
         const SizedBox(height:8),LinearProgressIndicator(value:(index+1)/questions.length),const SizedBox(height:12),
@@ -153,7 +173,7 @@ class _MockExamScreenState extends State<MockExamScreen> with WidgetsBindingObse
           OutlinedButton(onPressed:index==0?null:()=>setState(()=>index--),child:const Text('Previous')),
           const Spacer(),FilledButton(onPressed:index==questions.length-1?submit:()=>setState(()=>index++),child:Text(index==questions.length-1?'Finish':'Next')),
         ]),const SizedBox(height:12),Text('${answers.length} of ${questions.length} answered'),
-        const Text('Practice simulation only; not an official CSC exam or verified exam time limit.',style:TextStyle(fontSize:12)),
+        const Text('Original practice simulation; Professional mock uses the requested 30/35/30/5 blueprint, not an independently verified official CSC distribution or time limit.',style:TextStyle(fontSize:12)),
       ]));
   }
 }
