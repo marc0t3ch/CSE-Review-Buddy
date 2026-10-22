@@ -3,6 +3,8 @@ p=Path('android/app/src/main/AndroidManifest.xml')
 s=p.read_text()
 if 'POST_NOTIFICATIONS' not in s:
     s=s.replace('<application', '<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>\n    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>\n    <application',1)
+if 'USE_FULL_SCREEN_INTENT' not in s:
+    s=s.replace('<application', '<uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>\n    <application',1)
 if 'ScheduledNotificationReceiver' not in s:
     s=s.replace('</application>', """<receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
