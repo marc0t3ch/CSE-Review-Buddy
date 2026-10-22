@@ -25,8 +25,8 @@ for path in [Path('android/app/build.gradle'),Path('android/app/build.gradle.kts
         b += "\ndependencies { coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4' }\n"
     path.write_text(b)
 
-# Configure Kotlin tasks without afterEvaluate: Flutter's root Gradle script
-# can register subprojects after they have already been evaluated.
+# Set each Kotlin task's JVM target to match its corresponding Java task.
+# Android plugins use different targets (e.g. Java 11 and Java 17).
 root = Path('android/build.gradle.kts')
 if root.exists():
     b = root.read_text()
@@ -34,7 +34,13 @@ if root.exists():
 
 subprojects {
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+        val javaTaskName = name.replace("Kotlin", "JavaWithJavac")
+        val javaTask = tasks.findByName(javaTaskName) as? org.gradle.api.tasks.compile.JavaCompile
+        if (javaTask != null) {
+            compilerOptions.jvmTarget.set(
+                org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(javaTask.targetCompatibility)
+            )
+        }
     }
 }
 '''
