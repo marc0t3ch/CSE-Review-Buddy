@@ -95,7 +95,26 @@ class LessonList extends StatelessWidget {
   const LessonList({super.key,required this.subject,required this.lessons});
   @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:Text(subject['title'] as String)),body:ListView(padding:const EdgeInsets.all(16),children:[
     if(lessons.isEmpty) const Text('Lessons for this subject are being prepared.'),
-    for(final lesson in lessons) Card(child:ExpansionTile(title:Text(lesson['title'] as String),children:[Padding(padding:const EdgeInsets.all(16),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text(lesson['body'] as String),const SizedBox(height:12),Text(lesson['example'] as String,style:const TextStyle(fontWeight:FontWeight.w600))]))]),
+    for (final lesson in lessons)
+      Card(
+        child: ExpansionTile(
+          title: Text(lesson['title'] as String),
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(lesson['body'] as String),
+                  const SizedBox(height: 12),
+                  Text(lesson['example'] as String,
+                      style: const TextStyle(fontWeight: FontWeight.w600)),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
   ]));
 }
 class QuizScreen extends StatefulWidget {
