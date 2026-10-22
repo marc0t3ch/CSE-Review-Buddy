@@ -1,6 +1,6 @@
 {
-  "version": "phase2-sample-1",
-  "disclaimer": "Original sample educational content; not official CSC questions. Verify current CSC coverage and examination rules before publication.",
+  "version": "phase6-expanded-1",
+  "disclaimer": "Original practice content; not official CSC questions. The Professional 30/35/30/5 mock distribution is user-specified and not independently verified as an official CSC blueprint.",
   "subjects": [
     {
       "id": "verbal",
@@ -107,6 +107,76 @@
       "title": "Public service ethics",
       "body": "RA 6713 provides standards of conduct for public officials and employees, including accountability and professionalism.",
       "example": "Practice questions may ask which actions reflect ethical public service."
+    },
+    {
+      "id": "lesson_9",
+      "subjectId": "verbal",
+      "title": "Reading comprehension: main idea",
+      "body": "Identify the author's central claim before evaluating details. Distinguish evidence from the main conclusion.",
+      "example": "Shortcut: summarise each paragraph in five words, then choose the option supported by the whole passage."
+    },
+    {
+      "id": "lesson_10",
+      "subjectId": "verbal",
+      "title": "Elimination in grammar questions",
+      "body": "Check subject–verb agreement, pronoun reference, verb tense, and parallelism systematically.",
+      "example": "Shortcut: remove answers with an obvious agreement error before comparing subtler alternatives."
+    },
+    {
+      "id": "lesson_11",
+      "subjectId": "numerical",
+      "title": "Mental maths: fractions and percentages",
+      "body": "Convert common percentages into fractions: 50%=1/2, 25%=1/4, 20%=1/5, 12.5%=1/8.",
+      "example": "Shortcut: 12.5% of 320 is 320÷8=40; no long multiplication needed."
+    },
+    {
+      "id": "lesson_12",
+      "subjectId": "numerical",
+      "title": "Word problems: units and rates",
+      "body": "Underline the quantity asked for, list known values and units, then choose the operation.",
+      "example": "Shortcut: speed = distance/time; estimate the magnitude before selecting."
+    },
+    {
+      "id": "lesson_13",
+      "subjectId": "numerical",
+      "title": "Back-solving from answer choices",
+      "body": "When options are numerical, substitute a plausible option into the original condition.",
+      "example": "Shortcut: test the middle options first if values are ordered; verify the full equation."
+    },
+    {
+      "id": "lesson_14",
+      "subjectId": "analytical",
+      "title": "Conditional reasoning",
+      "body": "For P→Q, knowing P allows Q; knowing Q alone does not establish P.",
+      "example": "Shortcut: draw arrows and watch for reversing the conditional."
+    },
+    {
+      "id": "lesson_15",
+      "subjectId": "analytical",
+      "title": "Ordering and ranking puzzles",
+      "body": "Represent relative positions with arrows or a simple row; preserve every constraint.",
+      "example": "Shortcut: place the strongest fixed relationships first and eliminate contradictory choices."
+    },
+    {
+      "id": "lesson_16",
+      "subjectId": "analytical",
+      "title": "Number patterns: differences",
+      "body": "Check differences, ratios, alternating sequences, squares and cubes.",
+      "example": "Shortcut: differences 3,5,7,9 suggest the next difference is 11."
+    },
+    {
+      "id": "lesson_17",
+      "subjectId": "general",
+      "title": "Branches of Philippine government",
+      "body": "The legislature makes laws, the executive implements laws, and the judiciary interprets laws in cases.",
+      "example": "Shortcut: associate each branch with one primary function, then check the wording of the question."
+    },
+    {
+      "id": "lesson_18",
+      "subjectId": "general",
+      "title": "RA 6713 ethical decision-making",
+      "body": "Public officials should prioritize public interest, professionalism and accountability.",
+      "example": "Shortcut: eliminate choices involving personal gain, preferential treatment or misuse of resources."
     }
   ],
   "questions": [
@@ -409,6 +479,322 @@
       ],
       "correctIndex": 2,
       "explanation": "Waste segregation and proper disposal reduce environmental harm."
+    },
+    {
+      "id": "q_019",
+      "subjectId": "verbal",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Which word is closest in meaning to 'meticulous'?",
+      "options": [
+        "Careless",
+        "Thorough",
+        "Hasty",
+        "Uncertain"
+      ],
+      "correctIndex": 1,
+      "explanation": "Meticulous means showing great attention to detail.",
+      "hint": "Compare the precise meaning of each option."
+    },
+    {
+      "id": "q_020",
+      "subjectId": "verbal",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Choose the correct sentence.",
+      "options": [
+        "Neither of the answers are correct.",
+        "Neither of the answers is correct.",
+        "Neither answers is correct.",
+        "Neither answer are correct."
+      ],
+      "correctIndex": 1,
+      "explanation": "Neither is singular here and takes 'is'.",
+      "hint": "Identify the grammatical subject, not the nearest noun."
+    },
+    {
+      "id": "q_021",
+      "subjectId": "verbal",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Which sentence has the clearest parallel structure?",
+      "options": [
+        "She likes reading, swimming, and to hike.",
+        "She likes to read, swimming, and hikes.",
+        "She likes reading, swimming, and hiking.",
+        "She likes read, swim, and hiking."
+      ],
+      "correctIndex": 2,
+      "explanation": "All three activities use the -ing form.",
+      "hint": "Compare the grammatical forms in the list."
+    },
+    {
+      "id": "q_022",
+      "subjectId": "verbal",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Choose the word that best completes: 'The committee reached a ____ decision after reviewing all evidence.'",
+      "options": [
+        "hasty",
+        "deliberate",
+        "random",
+        "careless"
+      ],
+      "correctIndex": 1,
+      "explanation": "Deliberate means carefully considered.",
+      "hint": "Use the context of reviewing evidence."
+    },
+    {
+      "id": "q_023",
+      "subjectId": "numerical",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "What is 12.5% of 320?",
+      "options": [
+        "32",
+        "36",
+        "40",
+        "48"
+      ],
+      "correctIndex": 2,
+      "explanation": "12.5% is one eighth; 320 ÷ 8 = 40.",
+      "hint": "Express the percentage as a simple fraction."
+    },
+    {
+      "id": "q_024",
+      "subjectId": "numerical",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "A vehicle travels 150 km in 3 hours. What is its average speed?",
+      "options": [
+        "45 km/h",
+        "50 km/h",
+        "55 km/h",
+        "60 km/h"
+      ],
+      "correctIndex": 1,
+      "explanation": "Average speed is distance divided by time: 150 ÷ 3 = 50 km/h.",
+      "hint": "Use distance and elapsed time."
+    },
+    {
+      "id": "q_025",
+      "subjectId": "numerical",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Solve for x: 3x + 7 = 28.",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correctIndex": 2,
+      "explanation": "Subtract 7 then divide by 3: x = 7.",
+      "hint": "Isolate the unknown."
+    },
+    {
+      "id": "q_026",
+      "subjectId": "numerical",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "What is the mean of 8, 10, 12, and 14?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "correctIndex": 1,
+      "explanation": "The sum is 44; 44 ÷ 4 = 11.",
+      "hint": "Add the values and account for the number of entries."
+    },
+    {
+      "id": "q_027",
+      "subjectId": "numerical",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "A price increases from ₱200 to ₱250. What is the percentage increase?",
+      "options": [
+        "20%",
+        "25%",
+        "30%",
+        "50%"
+      ],
+      "correctIndex": 1,
+      "explanation": "Increase is ₱50 relative to original ₱200: 50 ÷ 200 = 25%.",
+      "hint": "Use the original price as the base."
+    },
+    {
+      "id": "q_028",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "All clerks are employees. All employees have ID cards. Which must be true?",
+      "options": [
+        "All ID holders are clerks.",
+        "All clerks have ID cards.",
+        "No employees are clerks.",
+        "Some clerks have no ID cards."
+      ],
+      "correctIndex": 1,
+      "explanation": "The two universal statements imply all clerks have ID cards.",
+      "hint": "Follow the direction of the category relationships."
+    },
+    {
+      "id": "q_029",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "What comes next: 2, 5, 10, 17, 26, __?",
+      "options": [
+        "35",
+        "36",
+        "37",
+        "38"
+      ],
+      "correctIndex": 2,
+      "explanation": "Differences are 3, 5, 7, 9; the next is 11, giving 37.",
+      "hint": "Compare successive differences."
+    },
+    {
+      "id": "q_030",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "If today is Tuesday, what day will it be 10 days later?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "correctIndex": 1,
+      "explanation": "Ten days is one week plus three days: Friday.",
+      "hint": "Reduce the day count by full weeks."
+    },
+    {
+      "id": "q_031",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "Ana is ahead of Ben. Ben is ahead of Carlo. Who is last among the three?",
+      "options": [
+        "Ana",
+        "Ben",
+        "Carlo",
+        "Cannot determine"
+      ],
+      "correctIndex": 2,
+      "explanation": "The order is Ana, Ben, Carlo.",
+      "hint": "Translate each relation into an ordered list."
+    },
+    {
+      "id": "q_032",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "Which number does not belong: 4, 9, 16, 25, 30?",
+      "options": [
+        "9",
+        "16",
+        "25",
+        "30"
+      ],
+      "correctIndex": 3,
+      "explanation": "4, 9, 16, and 25 are perfect squares; 30 is not.",
+      "hint": "Look for a common mathematical property."
+    },
+    {
+      "id": "q_033",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "If P implies Q and P is true, what must follow?",
+      "options": [
+        "Q is true",
+        "Q is false",
+        "P is false",
+        "Nothing follows"
+      ],
+      "correctIndex": 0,
+      "explanation": "Modus ponens: P and P→Q entail Q.",
+      "hint": "Apply the stated conditional directly."
+    },
+    {
+      "id": "q_034",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "A box contains only red and blue pens. There are 12 pens and 5 are red. How many are blue?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correctIndex": 2,
+      "explanation": "12 − 5 = 7 blue pens.",
+      "hint": "Use the fact that only two colors are present."
+    },
+    {
+      "id": "q_035",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "A is to the left of B, and B is to the left of C. Which order is possible from left to right?",
+      "options": [
+        "C, B, A",
+        "B, A, C",
+        "A, B, C",
+        "A, C, B"
+      ],
+      "correctIndex": 2,
+      "explanation": "Both given relations require A, B, C.",
+      "hint": "Draw a short position diagram."
+    },
+    {
+      "id": "q_036",
+      "subjectId": "general",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Which constitutional branch primarily enacts national laws in the Philippines?",
+      "options": [
+        "Executive",
+        "Legislative",
+        "Judicial",
+        "Civil Service Commission"
+      ],
+      "correctIndex": 1,
+      "explanation": "Congress, the legislative branch, enacts national laws.",
+      "hint": "Recall the distinct functions of the three branches."
     }
   ]
 }
