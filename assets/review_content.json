@@ -1,0 +1,414 @@
+{
+  "version": "phase2-sample-1",
+  "disclaimer": "Original sample educational content; not official CSC questions. Verify current CSC coverage and examination rules before publication.",
+  "subjects": [
+    {
+      "id": "verbal",
+      "title": "Verbal Ability",
+      "icon": "menu_book",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "description": "Vocabulary, grammar, and comprehension"
+    },
+    {
+      "id": "numerical",
+      "title": "Numerical Ability",
+      "icon": "calculate",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "description": "Arithmetic, percentages, ratios, and sequences"
+    },
+    {
+      "id": "analytical",
+      "title": "Analytical Ability",
+      "icon": "psychology",
+      "levels": [
+        "Professional"
+      ],
+      "description": "Logic and pattern recognition"
+    },
+    {
+      "id": "clerical",
+      "title": "Clerical Ability",
+      "icon": "fact_check",
+      "levels": [
+        "Subprofessional"
+      ],
+      "description": "Filing, spelling, and accuracy"
+    },
+    {
+      "id": "general",
+      "title": "General Information",
+      "icon": "public",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "description": "Constitution, ethics, and civic knowledge"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson_1",
+      "subjectId": "verbal",
+      "title": "Vocabulary and context",
+      "body": "Synonyms express similar meanings; antonyms express opposite meanings. Determine the word’s meaning from context before choosing.",
+      "example": "Example: concise = brief; abundant ≠ scarce."
+    },
+    {
+      "id": "lesson_2",
+      "subjectId": "verbal",
+      "title": "Subject–verb agreement",
+      "body": "Singular subjects generally require singular verbs. Words such as each and every are treated as singular when they are the subject.",
+      "example": "Example: Each applicant has an identification card."
+    },
+    {
+      "id": "lesson_3",
+      "subjectId": "numerical",
+      "title": "Percentages and discounts",
+      "body": "To calculate p percent of a number, multiply by p/100. To calculate a discounted price, subtract the discount from the original price.",
+      "example": "Example: 15% of 240 = 0.15 × 240 = 36."
+    },
+    {
+      "id": "lesson_4",
+      "subjectId": "numerical",
+      "title": "Ratios and sequences",
+      "body": "For a ratio a:b, the total parts are a+b. In number patterns, inspect differences and multiplication factors.",
+      "example": "Example: Girls in a 2:3 ratio of 30 students = 30 × 3/5 = 18."
+    },
+    {
+      "id": "lesson_5",
+      "subjectId": "analytical",
+      "title": "Deductive reasoning",
+      "body": "Distinguish statements that must follow from premises from those that may be true. Avoid assuming relationships not given.",
+      "example": "Example: All roses are flowers; this does not mean all flowers are roses."
+    },
+    {
+      "id": "lesson_6",
+      "subjectId": "clerical",
+      "title": "Alphabetical filing",
+      "body": "Compare names letter by letter, starting at the beginning. If initial letters match, continue to the first differing character.",
+      "example": "Example: Ramos comes before Reyes."
+    },
+    {
+      "id": "lesson_7",
+      "subjectId": "general",
+      "title": "The Philippine Constitution",
+      "body": "The 1987 Constitution is the supreme law of the Philippines and establishes the structure of government and fundamental rights.",
+      "example": "Study the three branches of government and their functions."
+    },
+    {
+      "id": "lesson_8",
+      "subjectId": "general",
+      "title": "Public service ethics",
+      "body": "RA 6713 provides standards of conduct for public officials and employees, including accountability and professionalism.",
+      "example": "Practice questions may ask which actions reflect ethical public service."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_001",
+      "subjectId": "verbal",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Which word is closest in meaning to “concise”?",
+      "options": [
+        "Brief",
+        "Vague",
+        "Lengthy",
+        "Confusing"
+      ],
+      "correctIndex": 0,
+      "explanation": "Concise means expressing information clearly in few words."
+    },
+    {
+      "id": "q_002",
+      "subjectId": "verbal",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Choose the grammatically correct sentence.",
+      "options": [
+        "Each of the students have a notebook.",
+        "Each of the students has a notebook.",
+        "Each students has a notebook.",
+        "Each of students have a notebook."
+      ],
+      "correctIndex": 1,
+      "explanation": "The singular subject each takes the singular verb has."
+    },
+    {
+      "id": "q_003",
+      "subjectId": "verbal",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Choose the antonym of “abundant.”",
+      "options": [
+        "Plentiful",
+        "Scarce",
+        "Numerous",
+        "Ample"
+      ],
+      "correctIndex": 1,
+      "explanation": "Scarce means insufficient or in short supply."
+    },
+    {
+      "id": "q_004",
+      "subjectId": "verbal",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Which sentence uses “their” correctly?",
+      "options": [
+        "Their going to the library.",
+        "The books are over their.",
+        "Their project was submitted yesterday.",
+        "I will meet their tomorrow."
+      ],
+      "correctIndex": 2,
+      "explanation": "Their is a possessive determiner modifying project."
+    },
+    {
+      "id": "q_005",
+      "subjectId": "numerical",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "What is 15% of 240?",
+      "options": [
+        "24",
+        "30",
+        "36",
+        "40"
+      ],
+      "correctIndex": 2,
+      "explanation": "0.15 × 240 = 36."
+    },
+    {
+      "id": "q_006",
+      "subjectId": "numerical",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "A shirt costs ₱800 and is discounted by 25%. What is the sale price?",
+      "options": [
+        "₱200",
+        "₱550",
+        "₱600",
+        "₱650"
+      ],
+      "correctIndex": 2,
+      "explanation": "Discount = ₱200; sale price = ₱800 − ₱200 = ₱600."
+    },
+    {
+      "id": "q_007",
+      "subjectId": "numerical",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Find the next number: 3, 6, 12, 24, __.",
+      "options": [
+        "36",
+        "42",
+        "48",
+        "54"
+      ],
+      "correctIndex": 2,
+      "explanation": "Each term is multiplied by 2."
+    },
+    {
+      "id": "q_008",
+      "subjectId": "numerical",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "The ratio of boys to girls is 2:3. If there are 30 students, how many are girls?",
+      "options": [
+        "12",
+        "15",
+        "18",
+        "20"
+      ],
+      "correctIndex": 2,
+      "explanation": "Girls make up 3 of 5 equal parts: 30 × 3/5 = 18."
+    },
+    {
+      "id": "q_009",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "All roses are flowers. Some flowers are yellow. Which statement must be true?",
+      "options": [
+        "All roses are yellow.",
+        "Some roses are yellow.",
+        "All roses are flowers.",
+        "No flowers are roses."
+      ],
+      "correctIndex": 2,
+      "explanation": "The first premise directly establishes that every rose is a flower."
+    },
+    {
+      "id": "q_010",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "If A is taller than B, and B is taller than C, which is true?",
+      "options": [
+        "C is taller than A.",
+        "A is taller than C.",
+        "A and C are equal.",
+        "Cannot be determined."
+      ],
+      "correctIndex": 1,
+      "explanation": "Height comparison is transitive: A > B > C."
+    },
+    {
+      "id": "q_011",
+      "subjectId": "analytical",
+      "levels": [
+        "Professional"
+      ],
+      "prompt": "Complete the pattern: A, C, F, J, O, __.",
+      "options": [
+        "S",
+        "T",
+        "U",
+        "V"
+      ],
+      "correctIndex": 2,
+      "explanation": "Alphabet positions increase by 2, 3, 4, 5, then 6: O (15) + 6 = U (21)."
+    },
+    {
+      "id": "q_012",
+      "subjectId": "clerical",
+      "levels": [
+        "Subprofessional"
+      ],
+      "prompt": "Which name comes first in alphabetical filing order?",
+      "options": [
+        "Reyes, Ana",
+        "Ramos, Ben",
+        "Rivera, Carl",
+        "Rodriguez, Dana"
+      ],
+      "correctIndex": 1,
+      "explanation": "Ramos comes before Reyes, Rivera, and Rodriguez alphabetically."
+    },
+    {
+      "id": "q_013",
+      "subjectId": "clerical",
+      "levels": [
+        "Subprofessional"
+      ],
+      "prompt": "Which pair of reference numbers matches exactly?",
+      "options": [
+        "AB-1042 / AB-1024",
+        "XZ-9901 / XZ-9901",
+        "PQ-7338 / PQ-7383",
+        "LM-4810 / LN-4810"
+      ],
+      "correctIndex": 1,
+      "explanation": "Both entries are exactly XZ-9901."
+    },
+    {
+      "id": "q_014",
+      "subjectId": "clerical",
+      "levels": [
+        "Subprofessional"
+      ],
+      "prompt": "Choose the correctly spelled word.",
+      "options": [
+        "Accomodation",
+        "Accommodation",
+        "Acommodation",
+        "Accommondation"
+      ],
+      "correctIndex": 1,
+      "explanation": "Accommodation is spelled with double c and double m."
+    },
+    {
+      "id": "q_015",
+      "subjectId": "general",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Which document is the supreme law of the Philippines?",
+      "options": [
+        "Civil Code",
+        "1987 Philippine Constitution",
+        "Labor Code",
+        "Revised Penal Code"
+      ],
+      "correctIndex": 1,
+      "explanation": "The Constitution is the supreme law of the land."
+    },
+    {
+      "id": "q_016",
+      "subjectId": "general",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Republic Act No. 6713 is also known as the ____.",
+      "options": [
+        "Local Government Code",
+        "Code of Conduct and Ethical Standards for Public Officials and Employees",
+        "Data Privacy Act",
+        "Anti-Red Tape Act"
+      ],
+      "correctIndex": 1,
+      "explanation": "RA 6713 sets ethical standards for public officials and employees."
+    },
+    {
+      "id": "q_017",
+      "subjectId": "general",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Which branch of government interprets laws?",
+      "options": [
+        "Executive",
+        "Legislative",
+        "Judiciary",
+        "Commission on Elections"
+      ],
+      "correctIndex": 2,
+      "explanation": "The judiciary interprets and applies the law in cases before courts."
+    },
+    {
+      "id": "q_018",
+      "subjectId": "general",
+      "levels": [
+        "Professional",
+        "Subprofessional"
+      ],
+      "prompt": "Which action best demonstrates environmental responsibility?",
+      "options": [
+        "Burning plastic waste",
+        "Dumping oil in waterways",
+        "Segregating and properly disposing of waste",
+        "Leaving lights on all day"
+      ],
+      "correctIndex": 2,
+      "explanation": "Waste segregation and proper disposal reduce environmental harm."
+    }
+  ]
+}
